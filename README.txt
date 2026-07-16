@@ -18,14 +18,14 @@ HOW TO HOST ON VERCEL
     No build settings needed — it's a plain static site.
 
 SIGNUP EMAILS
-  Every signup is emailed to: anshu@brandmirchi.com
+  Every signup is emailed to: sunbirdsrvresortvillage@gmail.com
   The FIRST time someone submits the form on your live site, FormSubmit
-  sends anshu@brandmirchi.com a one-time "Activate" email. Click that link
+  sends sunbirdsrvresortvillage@gmail.com a one-time "Activate" email. Click that link
   once. After that, every signup is delivered automatically — no dashboard,
   no login, nothing else to manage.
 
   To change the recipient later, open index.html, find:
-     var NOTIFY_ENDPOINT = "https://formsubmit.co/ajax/anshu@brandmirchi.com";
+     var NOTIFY_ENDPOINT = "https://formsubmit.co/ajax/sunbirdsrvresortvillage@gmail.com";
   and replace the email at the end.
 
 CONTACT LINKS
