@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunbirds RV Resort &amp; Village — Coming Soon</title>
+<meta name="description" content="Sunbirds RV Resort & Village is on its way — a sun-warmed community for RVs, park models, and tiny homes. Subscribe for opening dates and a first look.">
+<meta property="og:title" content="Sunbirds RV Resort & Village — Coming Soon">
+<meta property="og:description" content="A sun-warmed RV resort and tiny-home village, being built for the ones who follow the light.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#160C05;
+    --night:#241606;
+    --bark:#3a2410;
+    --bronze:#9a6b27;
+    --gold:#c79a45;
+    --gold-lite:#e7ca79;
+    --champagne:#f3e8c9;
+    --muted:rgba(243,232,201,.60);
+    --line:rgba(199,154,69,.24);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--champagne);
+    font-family:"Mulish",system-ui,sans-serif;
+    font-weight:300;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit}
+  img{max-width:100%;height:auto;display:block}
+
+  .eyebrow{
+    font-family:"Mulish",sans-serif;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.42em;
+    font-size:.72rem;
+    color:var(--gold);
+    margin:0;
+  }
+  h1,h2{font-family:"Cinzel",serif;font-weight:600;line-height:1.06;margin:0}
+  .divider{
+    display:flex;align-items:center;justify-content:center;gap:.9rem;
+    margin:0 auto;color:var(--bronze);
+  }
+  .divider::before,.divider::after{
+    content:"";height:1px;width:min(90px,16vw);
+    background:linear-gradient(90deg,transparent,var(--line));
+  }
+  .divider::after{background:linear-gradient(90deg,var(--line),transparent)}
+  .leaf{width:14px;height:14px;color:var(--gold);opacity:.85}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:min(100svh,760px);
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    text-align:center;
+    padding:2.5rem 1.5rem 5rem;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .sky{
+    position:absolute;inset:0;z-index:-3;
+    background:
+      radial-gradient(120% 90% at 50% 22%, #3c2610 0%, #2a1908 34%, var(--ink) 68%),
+      linear-gradient(180deg,#1c1006 0%, var(--ink) 100%);
+  }
+  .sun-glow{
+    position:absolute;left:50%;top:26%;z-index:-2;
+    width:min(760px,120vw);height:min(760px,120vw);
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle,
+      rgba(231,202,121,.34) 0%,
+      rgba(199,154,69,.16) 34%,
+      rgba(154,107,39,.06) 55%,
+      transparent 70%);
+    filter:blur(2px);
+    animation:breathe 9s ease-in-out infinite;
+  }
+  .rays{
+    position:absolute;left:50%;top:26%;z-index:-2;
+    width:min(1500px,220vw);height:min(1500px,220vw);
+    transform:translate(-50%,-50%);
+    background:repeating-conic-gradient(from 0deg,
+      rgba(231,202,121,.10) 0deg 1.1deg,
+      transparent 1.1deg 10deg);
+    -webkit-mask:radial-gradient(circle,#000 6%,rgba(0,0,0,.5) 24%,transparent 46%);
+            mask:radial-gradient(circle,#000 6%,rgba(0,0,0,.5) 24%,transparent 46%);
+    animation:spin 140s linear infinite;
+    opacity:.9;
+  }
+  .grain{
+    position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(circle at 50% 120%,transparent 55%,rgba(0,0,0,.55) 100%);
+  }
+  @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  @keyframes breathe{
+    0%,100%{opacity:.75;transform:translate(-50%,-50%) scale(1)}
+    50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}
+  }
+
+  .hero-logo{
+    width:clamp(250px,40vw,360px);
+    margin:0 auto;
+    filter:drop-shadow(0 18px 40px rgba(0,0,0,.55));
+  }
+  .hero-eyebrow{margin-top:1.1rem}
+  .hero h1{
+    font-size:clamp(2.4rem,6vw,4.35rem);
+    letter-spacing:.02em;
+    margin:.55rem 0 0;
+    background:linear-gradient(180deg,#fbe7b7 0%,var(--gold) 48%,#8a5d21 100%);
+    -webkit-background-clip:text;background-clip:text;
+    color:transparent;
+  }
+  .hero-tag{
+    max-width:42ch;margin:.65rem auto 0;
+    color:var(--muted);font-size:clamp(.95rem,2vw,1.08rem);
+  }
+  .scroll-cue{
+    position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:.5rem;
+    color:var(--bronze);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;
+    text-decoration:none;
+  }
+  .scroll-cue span{width:1px;height:24px;background:linear-gradient(var(--gold),transparent);animation:bob 2.6s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+  /* ---------- SHARED SECTION ---------- */
+  .band{padding:clamp(4.5rem,10vw,7.5rem) 1.5rem;position:relative}
+  .wrap{max-width:var(--maxw);margin:0 auto}
+
+  /* ---------- SUBSCRIBE ---------- */
+  .subscribe{
+    background:
+      radial-gradient(90% 130% at 50% 0%,#2a1908 0%,var(--ink) 60%);
+    border-top:1px solid var(--line);
+    text-align:center;
+  }
+  .subscribe h2{font-size:clamp(1.7rem,4.4vw,2.6rem);color:var(--champagne);margin:1.2rem 0 .9rem}
+  .subscribe p.lead{max-width:46ch;margin:0 auto;color:var(--muted)}
+  .subscribe .eyebrow{margin-top:1.4rem}
+  .form{
+    margin:2.4rem auto 0;max-width:520px;
+    display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;
+  }
+  .form input[type=email]{
+    flex:1 1 240px;min-width:0;
+    background:rgba(243,232,201,.05);
+    border:1px solid var(--line);
+    border-radius:2px;
+    color:var(--champagne);
+    padding:.95rem 1.1rem;
+    font-family:inherit;font-size:1rem;
+    transition:border-color .25s,background .25s;
+  }
+  .form input[type=email]::placeholder{color:rgba(243,232,201,.4)}
+  .form input[type=email]:focus{
+    outline:none;border-color:var(--gold);background:rgba(243,232,201,.08);
+  }
+  .btn{
+    cursor:pointer;border:none;border-radius:2px;
+    font-family:"Cinzel",serif;font-weight:600;letter-spacing:.08em;
+    font-size:.92rem;text-transform:uppercase;
+    padding:.95rem 1.9rem;
+    color:#2a1706;
+    background:linear-gradient(180deg,var(--gold-lite),var(--gold) 55%,var(--bronze));
+    box-shadow:0 6px 18px rgba(154,107,39,.35);
+    transition:transform .2s,box-shadow .2s,filter .2s;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(154,107,39,.5);filter:brightness(1.05)}
+  .btn:active{transform:translateY(0)}
+  .btn:disabled{cursor:wait;opacity:.65;transform:none;filter:none}
+  .form-note{margin:1rem auto 0;font-size:.8rem;color:rgba(243,232,201,.42)}
+  .form-msg{margin:1.3rem auto 0;min-height:1.4em;font-size:.98rem;color:var(--gold-lite)}
+  .form-msg.err{color:#e8a06a}
+
+  /* ---------- SOCIAL ---------- */
+  .social{margin-top:2.8rem;display:flex;flex-direction:column;align-items:center;gap:1rem}
+  .social .eyebrow{color:var(--bronze)}
+  .fb{
+    display:inline-flex;align-items:center;gap:.65rem;
+    text-decoration:none;
+    border:1px solid var(--line);border-radius:2px;
+    padding:.7rem 1.3rem;color:var(--champagne);
+    font-weight:500;font-size:.95rem;letter-spacing:.02em;
+    transition:border-color .25s,background .25s,transform .2s;
+  }
+  .fb:hover{border-color:var(--gold);background:rgba(199,154,69,.08);transform:translateY(-2px)}
+  .fb svg{width:20px;height:20px;fill:var(--gold)}
+  .social-row{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+  .contact-line{margin-top:1.4rem;color:var(--muted);font-size:.95rem}
+  .contact-line a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .25s}
+  .contact-line a:hover{border-color:var(--gold)}
+  a:focus-visible,.btn:focus-visible,.form input:focus-visible{
+    outline:2px solid var(--gold-lite);outline-offset:4px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{border-top:1px solid var(--line);background:linear-gradient(180deg,var(--ink),#1b0f06)}
+  .about .head{text-align:center;margin-bottom:3rem}
+  .about h2{font-size:clamp(1.7rem,4.4vw,2.6rem);color:var(--champagne);margin:1.1rem 0 0}
+  .about-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);
+    align-items:start;
+  }
+  .about-grid p{margin:0 0 1.15rem;color:rgba(243,232,201,.78);font-size:1.04rem}
+  .about-grid p:last-child{margin-bottom:0}
+  .about-lead{font-family:"Cinzel",serif;font-weight:400;font-size:1.2rem;line-height:1.5;color:var(--champagne)!important}
+  .pillars{
+    margin-top:3.4rem;display:grid;grid-template-columns:repeat(3,1fr);
+    gap:1.4rem;border-top:1px solid var(--line);padding-top:2.6rem;
+  }
+  .pillar h3{font-family:"Cinzel",serif;font-weight:500;font-size:1.05rem;color:var(--gold);margin:0 0 .4rem;letter-spacing:.03em}
+  .pillar p{margin:0;color:var(--muted);font-size:.92rem}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:3.4rem 1.5rem 3rem;text-align:center;
+    background:var(--ink);
+  }
+  .footer-logo{width:min(240px,60vw);margin:0 auto 1.4rem;opacity:.95}
+  .footer-tag{font-family:"Cinzel",serif;color:var(--bronze);letter-spacing:.24em;text-transform:uppercase;font-size:.72rem;margin:0 0 1.3rem}
+  .copyright{color:rgba(243,232,201,.4);font-size:.78rem;margin:0}
+  footer .contact-line{margin-top:0}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:720px){
+    .hero{min-height:100svh;padding:2rem 1.25rem 4.5rem}
+    .hero-logo{width:clamp(230px,70vw,320px)}
+    .hero-eyebrow{margin-top:.8rem}
+    .hero h1{margin-top:.4rem}
+    .about-grid{grid-template-columns:1fr;gap:1.4rem}
+    .pillars{grid-template-columns:1fr;gap:1.8rem}
+    .divider::before,.divider::after{width:60px}
+  }
+  @media (max-height:680px) and (min-width:721px){
+    .hero{min-height:640px}
+    .hero-logo{width:280px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .rays,.sun-glow,.scroll-cue span{animation:none!important}
+    .reveal{transition:none;opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="sky"></div>
+    <div class="rays"></div>
+    <div class="sun-glow"></div>
+    <div class="grain"></div>
+
+    <img class="hero-logo" src="sunbirds-logo.png" width="841" height="863" alt="Sunbirds RV Resort & Village logo" fetchpriority="high">
+    <p class="eyebrow hero-eyebrow">Now taking shape</p>
+    <h1>Coming Soon</h1>
+    <p class="hero-tag">A sun-warmed RV resort and tiny-home village, built for the ones who follow the light.</p>
+
+    <a class="scroll-cue" href="#notify" aria-label="Scroll to subscribe">
+      Discover
+      <span></span>
+    </a>
+  </header>
+
+  <!-- ============ SUBSCRIBE + SOCIAL ============ -->
+  <section class="band subscribe" id="notify">
+    <div class="wrap reveal">
+      <div class="divider" aria-hidden="true">
+        <svg class="leaf" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C8 6 6 9 6 13a6 6 0 0 0 12 0c0-4-2-7-6-11Z"/></svg>
+      </div>
+      <p class="eyebrow">Join the list</p>
+      <h2>Be the first to know</h2>
+      <p class="lead">Opening dates, early-bird rates, and a first look at the village — sent straight to your inbox, no crowding.</p>
+
+      <!-- Signups are emailed to anshu@brandmirchi.com (via the free FormSubmit relay). No backend needed. -->
+      <form class="form" id="notifyForm" novalidate>
+        <input type="email" name="email" id="emailInput" placeholder="you@email.com" autocomplete="email" required>
+        <button class="btn" type="submit">Notify me</button>
+      </form>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+      <p class="form-note">We'll only email about Sunbirds. Unsubscribe anytime.</p>
+
+      <div class="social">
+        <p class="eyebrow">Follow along</p>
+        <div class="social-row">
+          <!-- Replace href with your real Facebook page URL -->
+          <a class="fb" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg>
+            Sunbirds on Facebook
+          </a>
+          <a class="fb" href="mailto:sunbirdsrvresortvillage@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.2 8-5.2H4l8 5.2Zm0 2.1L4 9.1V17h16V9.1l-8 5.2Z"/></svg>
+            Email us
+          </a>
+        </div>
+        <p class="contact-line">Questions? Reach us at <a href="mailto:sunbirdsrvresortvillage@gmail.com">sunbirdsrvresortvillage@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="band about" id="about">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Our story</p>
+        <h2>About Sunbirds</h2>
+      </div>
+
+      <div class="about-grid reveal">
+        <div>
+          <p class="about-lead">Sunbirds is built around a simple idea: the best trips shouldn't have to end at the campground gate.</p>
+          <p>Set under wide skies and easy mornings, we're creating a community where RVs, park models, and tiny homes share the same warm horizon — full-service sites, resort comforts, and a village that feels like it was always here.</p>
+        </div>
+        <div>
+          <p>Whether you're chasing the season, parking for a spell, or planting roots, you'll find shaded sites, thoughtful amenities, and neighbors who wave. Think of it less as a lot to park on and more as a place to belong to.</p>
+          <p>We're putting the finishing touches on everything now. Add your email above and we'll bring you along from the ground up — first reservations, opening celebrations, and the small updates in between.</p>
+        </div>
+      </div>
+
+      <div class="pillars reveal">
+        <div class="pillar">
+          <h3>Room to roam</h3>
+          <p>Spacious, full-hookup sites laid out for long stays and short escapes alike.</p>
+        </div>
+        <div class="pillar">
+          <h3>Reasons to stay</h3>
+          <p>Resort amenities and shared spaces designed for slow mornings and good company.</p>
+        </div>
+        <div class="pillar">
+          <h3>A real village</h3>
+          <p>A mixed community of RVs, park models, and tiny homes — a place with a pulse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <img class="footer-logo" src="sunbirds-wordmark.png" alt="Sunbirds RV Resort & Village">
+    <p class="footer-tag">Follow the sun</p>
+    <p class="contact-line"><a href="mailto:sunbirdsrvresortvillage@gmail.com">sunbirdsrvresortvillage@gmail.com</a></p>
+    <p class="copyright">© <span id="year"></span> Sunbirds RV Resort &amp; Village. All rights reserved.</p>
+  </footer>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Scroll reveal, with a safe fallback for older browsers.
+  var revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.14});
+    revealItems.forEach(function(el){ io.observe(el); });
+  } else {
+    revealItems.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ============================================================
+     EMAIL SIGNUP  ->  emailed to anshu@brandmirchi.com
+     Uses FormSubmit (https://formsubmit.co) — a free relay that
+     forwards each submission to the address below. No account,
+     no API key, no server. To send to a different address, just
+     change the email in NOTIFY_ENDPOINT.
+
+     NOTE: the first time a real submission is sent from your live
+     site, FormSubmit emails anshu@brandmirchi.com a one-time
+     "Activate" link. Click it once, and every signup after that
+     is delivered automatically.
+     ============================================================ */
+  var NOTIFY_ENDPOINT = "https://formsubmit.co/ajax/anshu@brandmirchi.com";
+
+  var form  = document.getElementById('notifyForm');
+  var msg   = document.getElementById('formMsg');
+  var input = document.getElementById('emailInput');
+  var btn   = form.querySelector('.btn');
+  var valid = function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); };
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = input.value.trim();
+    if(!valid(email)){
+      msg.textContent = "Please enter a valid email address.";
+      msg.classList.add('err');
+      input.focus();
+      return;
+    }
+    msg.classList.remove('err');
+    btn.disabled = true;
+    btn.setAttribute('aria-busy', 'true');
+    msg.textContent = "One moment\u2026";
+
+    fetch(NOTIFY_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        _subject: "New Sunbirds signup",
+        _template: "table",
+        _captcha: "false"
+      })
+    })
+    .then(function(r){ if(!r.ok) throw new Error('bad status'); return r.json().catch(function(){ return {}; }); })
+    .then(function(){
+      msg.textContent = "You're on the list. We'll be in touch as the sun comes up on Sunbirds.";
+      form.reset();
+    })
+    .catch(function(){
+      msg.textContent = "Couldn't send that just now \u2014 please try again.";
+      msg.classList.add('err');
+    })
+    .finally(function(){
+      btn.disabled = false;
+      btn.removeAttribute('aria-busy');
+    });
+  });
+</script>
+</body>
+</html>
